@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SkillConnect - Local Job & Skill Matching Portal</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#062B63',
+              800: '#062B63',
+              900: '#041B3E',
+            },
+            brandGreen: {
+              DEFAULT: '#08A84F',
+              600: '#068F42',
+            },
+            lightBg: '#F7FAFC'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-poppins text-slate-800 bg-[#F7FAFC] min-h-screen flex flex-col justify-between">
+
+  <!-- NAVBAR -->
+  <header class="bg-white border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-[#062B63] flex items-center justify-center text-white font-bold shadow-md">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-extrabold tracking-tight leading-none">
+              <span class="text-[#062B63]">Skill</span><span class="text-[#08A84F]">Connect</span>
+            </span>
+            <span class="text-[11px] font-medium text-slate-500 mt-1">
+              Local Work &bull; Local People &bull; Stronger Communities
+            </span>
+          </div>
+        </a>
+
+        <div class="text-xs text-slate-500 font-medium">
+          New to SkillConnect? 
+          <a href="signup.html" class="font-bold text-[#08A84F] hover:underline ml-1">Create an Account</a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- LOGIN CONTAINER -->
+  <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-xl shadow-navy/5 border border-slate-200/80 p-8 sm:p-10 relative">
+      
+      <!-- Role Tab Switcher -->
+      <div class="flex rounded-2xl bg-slate-100 p-1 mb-8">
+        <button id="tab-worker" class="flex-1 py-2.5 rounded-xl text-xs font-bold transition-all bg-white text-[#062B63] shadow-sm">
+          👷 Daily Worker
+        </button>
+        <button id="tab-employer" class="flex-1 py-2.5 rounded-xl text-xs font-semibold transition-all text-slate-500 hover:text-slate-800">
+          🏢 Employer / Contractor
+        </button>
+      </div>
+
+      <!-- Worker Login View (OTP Based) -->
+      <div id="worker-login-view" class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-2xl font-extrabold text-[#062B63]">Worker Login</h2>
+          <p class="text-xs text-slate-500 mt-1">Log in easily with your mobile number &amp; OTP</p>
+          <p class="text-xs text-emerald-600 font-medium mt-0.5">आसान लॉगिन: सिर्फ अपना मोबाइल नंबर डालें</p>
+        </div>
+
+        <form id="worker-form" class="space-y-4" onsubmit="handleWorkerLogin(event)">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Mobile Number</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-3.5 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-700 text-sm font-bold">+91</span>
+              <input type="tel" id="worker-phone" required pattern="[0-9]{10}" placeholder="9876543210" value="9876543210" class="w-full bg-slate-50 border border-slate-200 rounded-r-xl px-3.5 py-3 text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+            </div>
+          </div>
+
+          <div id="otp-section" class="hidden space-y-2">
+            <label class="block text-xs font-semibold text-slate-600">Enter 4-Digit OTP (Sent via SMS)</label>
+            <input type="text" id="worker-otp" maxlength="4" placeholder="1 2 3 4" value="1234" class="w-full tracking-widest text-center text-lg font-bold bg-slate-50 border border-slate-200 rounded-xl py-2.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+            <p class="text-[11px] text-slate-400 text-center">Demo OTP: <b>1234</b></p>
+          </div>
+
+          <button type="submit" id="worker-submit-btn" class="w-full py-3.5 bg-[#08A84F] hover:bg-[#068F42] text-white font-bold text-sm rounded-xl transition shadow-md shadow-brandGreen/20">
+            Send OTP on Mobile
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-slate-100 text-center">
+          <p class="text-xs text-slate-500">Need help? Call Toll-Free Worker Helpline: <b class="text-[#062B63]">1800-SKILL-CONNECT</b></p>
+        </div>
+      </div>
+
+      <!-- Employer Login View -->
+      <div id="employer-login-view" class="hidden space-y-6">
+        <div class="text-center">
+          <h2 class="text-2xl font-extrabold text-[#062B63]">Employer Login</h2>
+          <p class="text-xs text-slate-500 mt-1">Access your job postings &amp; hired workers</p>
+        </div>
+
+        <form class="space-y-4" onsubmit="event.preventDefault(); window.showToast('Login successful! Redirecting to Workers...'); setTimeout(() => window.location.href='workers.html', 1200);">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Email or Mobile Number</label>
+            <input type="text" required placeholder="contractor@buildinfra.com" value="contractor@buildinfra.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#062B63]">
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="text-xs font-semibold text-slate-600">Password</label>
+              <a href="#" class="text-xs text-[#08A84F] hover:underline font-medium">Forgot?</a>
+            </div>
+            <input type="password" required value="demo1234" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#062B63]">
+          </div>
+
+          <button type="submit" class="w-full py-3.5 bg-[#062B63] hover:bg-[#041B3E] text-white font-bold text-sm rounded-xl transition shadow-md shadow-navy/20">
+            Sign In as Employer
+          </button>
+        </form>
+
+        <div class="text-center">
+          <button type="button" onclick="document.getElementById('tab-worker').click()" class="text-xs font-semibold text-slate-500 hover:text-slate-700">
+            Are you a worker? Switch to Mobile OTP
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="py-6 text-center text-xs text-slate-400 border-t border-slate-200 bg-white">
+    <p>&copy; 2026 SkillConnect. Designed for Daily-Wage Worker Upliftment.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const tabWorker = document.getElementById('tab-worker');
+    const tabEmployer = document.getElementById('tab-employer');
+    const workerView = document.getElementById('worker-login-view');
+    const employerView = document.getElementById('employer-login-view');
+
+    tabWorker.addEventListener('click', () => {
+      tabWorker.classList.add('bg-white', 'text-[#062B63]', 'shadow-sm');
+      tabWorker.classList.remove('text-slate-500');
+      tabEmployer.classList.remove('bg-white', 'text-[#062B63]', 'shadow-sm');
+      tabEmployer.classList.add('text-slate-500');
+      workerView.classList.remove('hidden');
+      employerView.classList.add('hidden');
+    });
+
+    tabEmployer.addEventListener('click', () => {
+      tabEmployer.classList.add('bg-white', 'text-[#062B63]', 'shadow-sm');
+      tabEmployer.classList.remove('text-slate-500');
+      tabWorker.classList.remove('bg-white', 'text-[#062B63]', 'shadow-sm');
+      tabWorker.classList.add('text-slate-500');
+      employerView.classList.remove('hidden');
+      workerView.classList.add('hidden');
+    });
+
+    let otpSent = false;
+    function handleWorkerLogin(e) {
+      e.preventDefault();
+      const otpSection = document.getElementById('otp-section');
+      const submitBtn = document.getElementById('worker-submit-btn');
+
+      if (!otpSent) {
+        otpSent = true;
+        otpSection.classList.remove('hidden');
+        submitBtn.textContent = 'Verify & Login';
+        window.showToast('OTP sent to your mobile: 1234');
+      } else {
+        window.showToast('Login successful! Redirecting to Jobs...');
+        setTimeout(() => {
+          window.location.href = 'jobs.html';
+        }, 1200);
+      }
+    }
+  </script>
+</body>
+</html>

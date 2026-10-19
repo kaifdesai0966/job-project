@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Jobs | SkillConnect - Local Job & Skill Matching Portal</title>
+  <meta name="description" content="Explore local daily-wage shifts, construction work, plumbing, carpentry, and electrical jobs near you.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#062B63',
+              50: '#F0F5FD',
+              800: '#062B63',
+              900: '#041B3E',
+            },
+            brandGreen: {
+              DEFAULT: '#08A84F',
+              50: '#EAF8EE',
+              600: '#068F42',
+            },
+            accentYellow: '#F5B400',
+            lightBg: '#F7FAFC'
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-poppins text-slate-800 bg-[#F7FAFC] min-h-screen flex flex-col justify-between">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#062B63] to-[#0A3E8A] flex items-center justify-center shadow-md">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-extrabold tracking-tight leading-none">
+              <span class="text-[#062B63]">Skill</span><span class="text-[#08A84F]">Connect</span>
+            </span>
+            <span class="text-[11px] font-medium text-slate-500 tracking-wider mt-1">
+              Local Work &bull; Local People &bull; Stronger Communities
+            </span>
+          </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden md:flex items-center space-x-9">
+          <a href="index.html" class="text-slate-600 hover:text-[#062B63] font-medium text-sm transition-colors py-1">
+            Home
+          </a>
+          <!-- Find Jobs Active -->
+          <a href="jobs.html" class="nav-link-active font-semibold text-sm transition-colors py-1">
+            Find Jobs
+          </a>
+          <a href="workers.html" class="text-slate-600 hover:text-[#062B63] font-medium text-sm transition-colors py-1">
+            Find Workers
+          </a>
+          <a href="about.html" class="text-slate-600 hover:text-[#062B63] font-medium text-sm transition-colors py-1">
+            About
+          </a>
+        </nav>
+
+        <!-- Right Buttons -->
+        <div class="hidden sm:flex items-center space-x-3.5">
+          <a href="login.html" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-[#062B63] bg-white border-[1.5px] border-[#062B63] hover:bg-slate-50 transition-all">
+            Login
+          </a>
+          <a href="signup.html" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#08A84F] hover:bg-[#068F42] transition-all shadow-sm">
+            Sign Up
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div class="flex items-center sm:hidden">
+          <button id="mobile-menu-toggle" type="button" class="p-2 rounded-lg text-slate-600 hover:text-[#062B63]">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 space-y-3">
+      <a href="index.html" class="block py-2 text-base font-medium text-slate-700">Home</a>
+      <a href="jobs.html" class="block py-2 text-base font-bold text-[#08A84F]">Find Jobs</a>
+      <a href="workers.html" class="block py-2 text-base font-medium text-slate-700">Find Workers</a>
+      <a href="about.html" class="block py-2 text-base font-medium text-slate-700">About</a>
+      <div class="pt-3 flex flex-col gap-2">
+        <a href="login.html" class="w-full text-center py-2.5 rounded-xl font-semibold text-[#062B63] border border-[#062B63]">Login</a>
+        <a href="signup.html" class="w-full text-center py-2.5 rounded-xl font-semibold text-white bg-[#08A84F]">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Header -->
+      <div class="bg-gradient-to-r from-[#062B63] to-[#0A3E8A] rounded-3xl p-6 sm:p-10 text-white mb-8 shadow-xl">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/20 text-[#16B85A] text-xs font-bold mb-3">
+            <span>● 124 Daily Shifts Open in Your Ward</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Find Daily-Wage Jobs &amp; Shifts</h1>
+          <p class="text-slate-300 text-sm sm:text-base mt-2">
+            No middleman, no registration fee. Direct contact with site contractors and homeowners with same-day wage guarantees.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-5 mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+          
+          <!-- Search Keyword -->
+          <div class="sm:col-span-5 relative">
+            <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" id="job-search-input" placeholder="Search by trade (e.g. Mason, Electrician, Painter, Helper)..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+          </div>
+
+          <!-- Trade Filter -->
+          <div class="sm:col-span-3">
+            <select id="trade-filter-select" class="w-full py-3 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+              <option value="all">All Trade Categories</option>
+              <option value="mason">Masonry (Rajmistri)</option>
+              <option value="electrician">Electrician</option>
+              <option value="plumber">Plumber</option>
+              <option value="painter">House Painter</option>
+              <option value="carpenter">Carpenter</option>
+              <option value="helper">General Labor / Beldar</option>
+            </select>
+          </div>
+
+          <!-- Distance Filter -->
+          <div class="sm:col-span-2">
+            <select class="w-full py-3 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+              <option>Within 5 km</option>
+              <option selected>Within 10 km</option>
+              <option>Within 20 km</option>
+              <option>Any Distance</option>
+            </select>
+          </div>
+
+          <!-- Minimum Wage -->
+          <div class="sm:col-span-2">
+            <select class="w-full py-3 px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+              <option>Min. ₹500/day</option>
+              <option selected>Min. ₹700/day</option>
+              <option>Min. ₹900/day</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Quick Trade Filter Buttons -->
+        <div class="flex items-center gap-2 mt-4 pt-4 border-t border-slate-100 flex-wrap">
+          <span class="text-xs font-semibold text-slate-400">Quick Filters:</span>
+          <button class="filter-pill active px-3 py-1 rounded-full text-xs font-bold bg-[#08A84F] text-white" data-filter="all">All Jobs</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="mason">🧱 Mason</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="electrician">⚡ Electrician</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="plumber">🔧 Plumber</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="painter">🎨 Painter</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="carpenter">🪚 Carpenter</button>
+          <button class="filter-pill px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700" data-filter="helper">💪 Helper</button>
+        </div>
+      </div>
+
+      <!-- Jobs Grid -->
+      <div id="jobs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Job 1 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="mason">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 font-bold text-xs">Masonry &bull; 4 Workers</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Immediate</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Boundary Wall Construction &amp; Brickwork</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Sharma &amp; Sons Builders &bull; Sector 62</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Need experienced masons for brick laying and plastering on a 150-meter perimeter boundary wall.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 2.4 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 3 Days Shift</span>
+              <span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md">🍲 Lunch Provided</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹850 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Boundary Wall Construction (Mason)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="electrician">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 font-bold text-xs">Electrician &bull; 2 Workers</span>
+              <span class="text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Today Only</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Apartment Rewiring &amp; Distribution Box</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Apex Residency RWA &bull; Green Glen Layout</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Complete replacement of old aluminum wiring with copper cabling and trip switch upgrades.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 1.8 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 1 Day Shift</span>
+              <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md">⚡ Urgent</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹900 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Apartment Rewiring (Electrician)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="plumber">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 font-bold text-xs">Plumber &bull; 1 Worker</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Available</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Overhead Water Tank &amp; CPVC Piping</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Sunrise Heights &bull; Ward 12</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Installation of 2,000L Sintex water tank connection with ball valves and pressure pump.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 3.0 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 2 Days Shift</span>
+              <span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md">💵 Cash on Spot</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹800 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Overhead Water Tank (Plumber)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="painter">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 font-bold text-xs">Painting &bull; 3 Workers</span>
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Tomorrow</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Full Interior Emulsion &amp; Primer Coat</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Mr. K. Nair &bull; Rainbow Drive</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Complete putty touchup, sanding, and two coats of interior emulsion on newly plastered walls.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 4.1 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 4 Days Shift</span>
+              <span class="bg-purple-50 text-purple-700 px-2.5 py-1 rounded-md">☕ Tea &amp; Snacks</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹850 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Interior Painting (Painter)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="carpenter">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-orange-50 text-orange-700 font-bold text-xs">Carpentry &bull; 2 Workers</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Active</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Kitchen Cabinet Fitting &amp; Laminate</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Urban Living Interiors &bull; Whitefield</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Precision hinge fitting, drawer channel installation, and modular plywood assembling.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 5.2 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 3 Days Shift</span>
+              <span class="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-md">🔧 Tools Provided</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹950 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Kitchen Cabinet Fitting (Carpenter)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="job-card bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between" data-category="helper">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs">General Labor &bull; 6 Workers</span>
+              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Urgent</span>
+            </div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">Site Clearing, Sand &amp; Cement Mixing</h3>
+            <p class="text-xs text-slate-500 mt-1.5">Metro Infra Site 4 &bull; Outer Ring Road</p>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-2">Material shifting, assisting masons, site debris cleanup. Daily cash distribution at 5 PM.</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 1.5 km away</span>
+              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 5 Days Shift</span>
+              <span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md">💵 Daily Cash</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 block">Daily Wage</span>
+              <span class="text-lg font-extrabold text-[#08A84F]">₹650 <span class="text-xs font-normal text-slate-500">/ day</span></span>
+            </div>
+            <button data-modal-target="apply-modal" data-job-title="Site Clearing & Mixing (Helper)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 border-b border-slate-800 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-white font-extrabold text-base">Skill<span class="text-[#08A84F]">Connect</span></span>
+          <span class="text-slate-500">&bull; Local Job &amp; Skill Matching Portal</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="jobs.html" class="hover:text-white transition">Find Jobs</a>
+          <a href="workers.html" class="hover:text-white transition">Find Workers</a>
+          <a href="about.html" class="hover:text-white transition">About</a>
+        </div>
+      </div>
+      <p class="pt-6 text-center text-xs text-slate-500">&copy; 2026 SkillConnect. Dedicated to local daily-wage workers.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: QUICK JOB APPLY -->
+  <div id="apply-modal" class="modal-overlay fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative animate-fade-in-up">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <h3 class="font-bold text-slate-800 text-lg">Apply for Shift</h3>
+          <p id="modal-job-title" class="text-xs font-semibold text-[#08A84F]">Selected Job</p>
+        </div>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form id="job-apply-form" class="mt-4 space-y-4" onsubmit="event.preventDefault(); window.showToast('Application sent directly to contractor! Expect a phone call shortly.'); document.getElementById('apply-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden');">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Your Full Name</label>
+          <input type="text" required placeholder="e.g. Raju Sharma" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Mobile Number</label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-600 text-xs font-bold">+91</span>
+            <input type="tel" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full bg-slate-50 border border-slate-200 rounded-r-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Years of Experience in this Trade</label>
+          <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
+            <option>1 - 2 Years</option>
+            <option selected>3 - 5 Years</option>
+            <option>5+ Years (Master Mistri)</option>
+          </select>
+        </div>
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 bg-[#08A84F] hover:bg-[#068F42] text-white font-bold text-sm rounded-xl transition shadow-md">
+            Confirm &amp; Apply
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Job category pill filtering logic
+    document.querySelectorAll('.filter-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(b => {
+          b.classList.remove('active', 'bg-[#08A84F]', 'text-white');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        btn.classList.add('active', 'bg-[#08A84F]', 'text-white');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.job-card').forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Search bar filter
+    const searchInput = document.getElementById('job-search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        document.querySelectorAll('.job-card').forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(query) ? 'flex' : 'none';
+        });
+      });
+    }
+
+    // URL Param handler
+    const urlParams = new URLSearchParams(window.location.search);
+    const skillParam = urlParams.get('skill');
+    if (skillParam) {
+      const matchBtn = Array.from(document.querySelectorAll('.filter-pill')).find(b => 
+        b.getAttribute('data-filter').toLowerCase().includes(skillParam.toLowerCase()) ||
+        skillParam.toLowerCase().includes(b.getAttribute('data-filter').toLowerCase())
+      );
+      if (matchBtn) matchBtn.click();
+    }
+  </script>
+</body>
+</html>
