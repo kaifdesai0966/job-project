@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillConnect | Local Job & Skill Matching Portal for Daily-Wage Workers</title>
-  <meta name="description" content="Connect with trusted local daily-wage workers and nearby job opportunities based on skills, location, availability, and fair wages.">
+  <title>SkillConnect — Local Job &amp; Skill Matching Portal for Daily-Wage Workers</title>
+  <meta name="description" content="Connect with trusted local workers and nearby job opportunities based on skills, location, availability and experience.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,55 +33,53 @@
           },
           fontFamily: {
             poppins: ['Poppins', 'sans-serif'],
-            handwritten: ['Kalam', 'cursive'],
-            caveat: ['Caveat', 'cursive']
+            handwritten: ['Caveat', 'Kalam', 'cursive'],
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Poppins & Kalam -->
+  <!-- Google Fonts: Poppins, Caveat, Kalam -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Kalam:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="font-poppins text-slate-800 bg-white antialiased">
+<body class="font-poppins text-slate-800 bg-white min-h-screen antialiased flex flex-col justify-start">
 
   <!-- ================================================== -->
-  <!-- 1. HEADER / NAVBAR                                 -->
+  <!-- 1. TOP NAVIGATION BAR                              -->
   <!-- ================================================== -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.04)]">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
       <div class="flex items-center justify-between h-20">
         
-        <!-- LEFT SIDE: Logo & Tagline -->
-        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
-          <!-- Logo Icon: Workers / Community / Connection -->
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-navy to-[#0A3E8A] flex items-center justify-center shadow-md shadow-navy/20 group-hover:scale-105 transition-transform">
-            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <!-- Central Worker Connection Symbol -->
+        <!-- LEFT: People/connection logo + Brand name + Tagline -->
+        <a href="index.html" class="flex items-center gap-3.5 group focus:outline-none">
+          <!-- People / Connection Logo Icon -->
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#062B63] to-[#0A3E8A] flex items-center justify-center shadow-md shadow-[#062B63]/15 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
           
-          <!-- Logo Text & Sub-tagline -->
+          <!-- Brand text & small tagline below -->
           <div class="flex flex-col">
-            <span class="text-2xl font-extrabold tracking-tight leading-none flex items-center">
+            <span class="text-2xl font-extrabold tracking-tight leading-none">
               <span class="text-[#062B63]">Skill</span><span class="text-[#08A84F]">Connect</span>
             </span>
-            <span class="text-[11px] font-medium text-slate-500 tracking-wider mt-1">
+            <span class="text-[11px] font-medium text-slate-500 tracking-wide mt-1">
               Local Work &bull; Local People &bull; Stronger Communities
             </span>
           </div>
         </a>
 
-        <!-- NAVIGATION: Center / Right menu items -->
-        <nav class="hidden md:flex items-center space-x-9">
-          <!-- Home: Highlighted with green text and small green underline -->
+        <!-- CENTER: Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-10">
+          <!-- Home: highlighted in green with a thin green underline -->
           <a href="index.html" class="nav-link-active font-semibold text-sm transition-colors py-1">
             Home
           </a>
@@ -96,21 +94,20 @@
           </a>
         </nav>
 
-        <!-- RIGHT SIDE: Login & Sign Up buttons -->
+        <!-- RIGHT: Login and Sign Up buttons -->
         <div class="hidden sm:flex items-center space-x-3.5">
-          <!-- Login Button -->
-          <a href="login.html" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-[#062B63] bg-white border-[1.5px] border-[#062B63] hover:bg-slate-50 transition-all duration-200 hover:shadow-sm">
+          <!-- Login: white button, navy border, rounded corners -->
+          <a href="login.html" class="px-5 py-2.5 rounded-full text-sm font-semibold text-[#062B63] bg-white border-[1.5px] border-[#062B63] hover:bg-slate-50 transition-all duration-200">
             Login
           </a>
-          
-          <!-- Sign Up Button -->
-          <a href="signup.html" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#08A84F] hover:bg-[#068F42] transition-all duration-200 shadow-sm shadow-brandGreen/30 hover:shadow-md hover:shadow-brandGreen/40">
+          <!-- Sign Up: green button, white text, rounded corners -->
+          <a href="signup.html" class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-[#08A84F] hover:bg-[#068F42] transition-all duration-200 shadow-sm shadow-[#08A84F]/30 hover:shadow-md">
             Sign Up
           </a>
         </div>
 
         <!-- Mobile Menu Hamburger Button -->
-        <div class="flex items-center sm:hidden">
+        <div class="flex items-center md:hidden">
           <button id="mobile-menu-toggle" type="button" class="p-2 rounded-lg text-slate-600 hover:text-[#062B63] hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -122,25 +119,17 @@
     </div>
 
     <!-- Mobile Slide-Down Menu -->
-    <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 space-y-3">
-      <div class="flex justify-between items-center pb-2 border-b border-slate-100">
-        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Navigation</span>
-        <button id="mobile-menu-close" class="text-slate-400 hover:text-slate-700 p-1">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 pt-3 pb-6 space-y-3">
       <a href="index.html" class="block py-2 text-base font-bold text-[#08A84F]">Home</a>
       <a href="jobs.html" class="block py-2 text-base font-medium text-slate-700 hover:text-[#062B63]">Find Jobs</a>
       <a href="workers.html" class="block py-2 text-base font-medium text-slate-700 hover:text-[#062B63]">Find Workers</a>
       <a href="about.html" class="block py-2 text-base font-medium text-slate-700 hover:text-[#062B63]">About</a>
       
-      <div class="pt-4 flex flex-col gap-2.5">
-        <a href="login.html" class="w-full text-center py-2.5 rounded-xl font-semibold text-[#062B63] border border-[#062B63]">
+      <div class="pt-3 flex flex-col gap-2.5">
+        <a href="login.html" class="w-full text-center py-2.5 rounded-full font-semibold text-[#062B63] border-[1.5px] border-[#062B63]">
           Login
         </a>
-        <a href="signup.html" class="w-full text-center py-2.5 rounded-xl font-semibold text-white bg-[#08A84F]">
+        <a href="signup.html" class="w-full text-center py-2.5 rounded-full font-semibold text-white bg-[#08A84F]">
           Sign Up
         </a>
       </div>
@@ -148,153 +137,80 @@
   </header>
 
   <!-- ================================================== -->
-  <!-- 2. HERO SECTION                                    -->
+  <!-- 2. MAIN HERO SECTION                               -->
   <!-- ================================================== -->
-  <section class="relative bg-white pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
-    <!-- Subtle Background Ambient Accents -->
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-b from-blue-50/50 to-emerald-50/30 -z-10 pointer-events-none"></div>
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-50/60 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+  <section class="relative bg-white pt-8 lg:pt-12 pb-0 overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
         
-        <!-- ============================================== -->
-        <!-- 3. HERO LEFT CONTENT                           -->
-        <!-- ============================================== -->
-        <div class="lg:col-span-6 xl:col-span-6 animate-fade-in-up">
+        <!-- LEFT SIDE: Headline, Description, and CTA Buttons -->
+        <div class="lg:col-span-6 pb-10 lg:pb-16 pt-2">
           
-          <!-- Micro Trust Badge -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-xs font-semibold text-[#08A84F] mb-6">
-            <span class="w-2 h-2 rounded-full bg-[#08A84F] animate-ping"></span>
-            <span>Hyperlocal Portal for Daily-Wage &amp; Skilled Workers</span>
-          </div>
-
-          <!-- Large Bold Headline with Exact Text Required -->
-          <h1 class="hero-headline text-4xl sm:text-5xl lg:text-[3.75rem] font-extrabold tracking-tight mb-6">
+          <!-- Exact Headline -->
+          <h1 class="hero-headline text-4xl sm:text-5xl lg:text-[3.75rem] xl:text-[4rem] font-extrabold tracking-tight leading-[1.12] mb-6">
             <span class="text-[#062B63] block">Find Work.</span>
             <span class="text-[#062B63] block">Find Workers.</span>
             <span class="text-[#08A84F] block">Build Your Future.</span>
           </h1>
 
-          <!-- Required Description -->
+          <!-- Exact Description -->
           <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mb-9">
             Connect with trusted local workers and nearby job opportunities based on skills, location, availability and experience.
           </p>
 
-          <!-- ============================================ -->
-          <!-- 4. HERO BUTTONS                              -->
-          <!-- ============================================ -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+          <!-- Exactly Two Buttons Side-by-Side -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             
-            <!-- FIRST BUTTON: "Find a Job" -->
-            <!-- Search/Location/Job Icon | Text "Find a Job" | Arrow "→" | Green background | White text | Rounded pill shape | Bold typography -->
-            <a href="jobs.html" class="btn-cta-green inline-flex items-center justify-center gap-3 px-8 py-4 text-base tracking-wide group text-center">
-              <!-- Search/Location/Job Icon -->
+            <!-- Button 1: Find a Job -->
+            <a href="jobs.html" id="hero-btn-find-job" class="btn-cta-green inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold text-white bg-[#08A84F] hover:bg-[#068F42] rounded-full transition-all duration-200 shadow-md shadow-[#08A84F]/25 hover:shadow-lg hover:shadow-[#08A84F]/35 group">
+              <!-- Search Icon -->
               <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
               <span>Find a Job</span>
-              <span class="arrow-icon text-lg font-bold group-hover:translate-x-1 transition-transform">→</span>
+              <!-- Right Arrow -->
+              <span class="arrow-icon text-lg font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
             </a>
 
-            <!-- SECOND BUTTON: "Find a Worker" -->
-            <!-- Group/People Icon | Text "Find a Worker" | Arrow "→" | White background | Dark navy text | Dark navy thin border | Rounded pill shape -->
-            <a href="workers.html" class="btn-cta-outline-navy inline-flex items-center justify-center gap-3 px-8 py-4 text-base tracking-wide group text-center">
-              <!-- Group/People Icon -->
+            <!-- Button 2: Find a Worker -->
+            <a href="workers.html" id="hero-btn-find-worker" class="btn-cta-outline-navy inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold text-[#062B63] bg-white border-[1.5px] border-[#062B63] hover:bg-slate-50 rounded-full transition-all duration-200 shadow-sm hover:shadow-md group">
+              <!-- People/Group Icon -->
               <svg class="w-5 h-5 flex-shrink-0 text-[#062B63]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
               </svg>
               <span>Find a Worker</span>
-              <span class="arrow-icon text-lg font-bold group-hover:translate-x-1 transition-transform">→</span>
+              <!-- Right Arrow -->
+              <span class="arrow-icon text-lg font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
             </a>
 
-          </div>
-
-          <!-- Quick Trust Bullets -->
-          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-500 font-medium">
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-[#08A84F]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              100% Free for Daily Workers
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-[#062B63]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              Aadhaar &amp; Skill Verified
-            </span>
-            <span class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-[#F5B400]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              Zero Middleman Cut
-            </span>
           </div>
 
         </div>
 
-        <!-- ============================================== -->
-        <!-- 5. HERO VISUAL DETAILS & WORKERS COMPOSITION  -->
-        <!-- ============================================== -->
-        <div class="lg:col-span-6 xl:col-span-6 relative">
+        <!-- RIGHT SIDE: Worker Group Image & Handwritten Annotation -->
+        <div class="lg:col-span-6 relative flex flex-col justify-end">
           
-          <!-- Outer Decorative Container with Soft Framing -->
-          <div class="relative mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-navy/15 border-4 border-white bg-slate-100 group">
-            
-            <!-- Real High-Quality Worker Composition Image -->
-            <img 
-              src="assets/images/hero-workers.jpg" 
-              alt="Diverse local Indian workers including construction supervisor in safety helmet, electrician, plumber, gardener, painter, mechanic and chef" 
-              class="w-full h-auto object-cover object-center max-h-[520px] transition-transform duration-700 group-hover:scale-[1.02]"
-              loading="eager"
-            >
-
-            <!-- ============================================ -->
-            <!-- HANDWRITTEN-STYLE DECORATIVE ANNOTATION      -->
-            <!-- ============================================ -->
-            <!-- Upper-right portion of hero image:
-                 "Local Skills
-                  Create Stronger
-                  Communities"
-                 with simple hand-drawn underline/arrow beneath it -->
-            <div class="handwritten-badge">
-              <div class="handwritten-card">
-                <p class="font-handwritten text-[#062B63] text-lg sm:text-xl font-bold leading-tight tracking-wide">
-                  Local Skills<br>
-                  Create Stronger<br>
-                  <span class="text-[#08A84F]">Communities</span>
-                </p>
-                
-                <!-- Hand-drawn SVG underline & pointing arrow -->
-                <svg class="w-32 h-7 text-[#08A84F] mt-1" viewBox="0 0 140 30" fill="none" stroke="currentColor">
-                  <!-- Organic wavy hand-drawn underline -->
-                  <path d="M4 10 C 35 15, 80 5, 125 12" stroke-width="3" stroke-linecap="round"/>
-                  <!-- Curved arrow pointing toward the workers -->
-                  <path d="M125 12 C 120 18, 110 24, 100 27" stroke-width="2.5" stroke-linecap="round"/>
-                  <path d="M96 23 L 100 28 L 106 25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
+          <!-- Handwritten Annotation in the upper-right area above workers -->
+          <div class="absolute -top-4 sm:-top-6 right-2 sm:right-6 lg:right-6 z-20 pointer-events-none select-none">
+            <div class="font-handwritten text-[#062B63] text-xl sm:text-2xl lg:text-[1.7rem] font-bold leading-tight text-right transform -rotate-2">
+              <div>Local Skills</div>
+              <div>Create Stronger</div>
+              <div>Communities</div>
+              <!-- Hand-drawn underline beneath it -->
+              <svg class="w-36 sm:w-44 lg:w-48 h-4 text-[#062B63] ml-auto mt-1" viewBox="0 0 160 16" fill="none" stroke="currentColor">
+                <path d="M4 10 C 42 4, 110 14, 156 7" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
             </div>
-
-            <!-- Floating Live Status Tag (Bottom-Left of Hero Image) -->
-            <div class="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-[#08A84F] flex-shrink-0">
-                <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-bold text-slate-800">420+ Daily Workers Active Today</p>
-                <p class="text-[11px] text-slate-500">Masons, Plumbers, Electricians near you</p>
-              </div>
-            </div>
-
           </div>
 
-          <!-- Subtle Decorative Background Shape -->
-          <div class="absolute -bottom-6 -right-6 w-44 h-44 bg-[#08A84F]/10 rounded-full blur-2xl -z-10"></div>
-          <div class="absolute -top-6 -left-6 w-40 h-40 bg-[#062B63]/10 rounded-full blur-2xl -z-10"></div>
+          <!-- Continuous Realistic Worker Group Image extending to bottom edge -->
+          <div class="relative w-full pt-8 sm:pt-10 overflow-hidden flex items-end">
+            <img 
+              src="assets/images/hero-workers.jpg" 
+              alt="Group of diverse skilled workers standing shoulder-to-shoulder including construction supervisor, electrician, plumber, gardener, chef and painter" 
+              class="w-full h-auto object-cover object-bottom rounded-t-2xl sm:rounded-t-3xl shadow-xl lg:shadow-none"
+            >
+          </div>
 
         </div>
 
@@ -303,19 +219,16 @@
   </section>
 
   <!-- ================================================== -->
-  <!-- 6. BOTTOM FEATURE STRIP                            -->
+  <!-- 3. FOUR-FEATURE HORIZONTAL STRIP                   -->
   <!-- ================================================== -->
-  <!-- Wide horizontal feature strip immediately below the hero section.
-       Divided into FOUR equal sections with very light background (#F7FAFC)
-       and subtle vertical divider lines. -->
-  <section class="feature-strip py-8 bg-[#F7FAFC]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="feature-strip bg-[#F7FAFC] border-y border-slate-200/90 py-6 sm:py-7">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0">
         
-        <!-- FEATURE 1: Green location pin icon | "Local Opportunities" | "Jobs and workers near you" -->
-        <div class="feature-card feature-divider flex items-center gap-4 px-3 lg:px-6 py-2">
-          <!-- Green Location Pin Icon -->
-          <div class="feature-icon-wrapper bg-emerald-100 text-[#08A84F] flex-shrink-0 shadow-sm">
+        <!-- Item 1: Local Opportunities -->
+        <div class="feature-item flex items-center gap-4 py-2 lg:px-6 lg:border-r lg:border-slate-200">
+          <!-- Green location-pin icon -->
+          <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-[#08A84F] flex-shrink-0">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -327,10 +240,10 @@
           </div>
         </div>
 
-        <!-- FEATURE 2: Blue shield/checkmark icon | "Trusted Profiles" | "Verified and reliable" -->
-        <div class="feature-card feature-divider flex items-center gap-4 px-3 lg:px-6 py-2">
-          <!-- Blue Shield / Checkmark Icon -->
-          <div class="feature-icon-wrapper bg-blue-100 text-[#062B63] flex-shrink-0 shadow-sm">
+        <!-- Item 2: Trusted Profiles -->
+        <div class="feature-item flex items-center gap-4 py-2 lg:px-6 lg:border-r lg:border-slate-200">
+          <!-- Blue shield/checkmark icon -->
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#062B63] flex-shrink-0">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
@@ -341,10 +254,10 @@
           </div>
         </div>
 
-        <!-- FEATURE 3: Yellow lightning icon | "Quick & Easy" | "Simple and fast process" -->
-        <div class="feature-card feature-divider flex items-center gap-4 px-3 lg:px-6 py-2">
-          <!-- Yellow Lightning Icon -->
-          <div class="feature-icon-wrapper bg-amber-100 text-[#F5B400] flex-shrink-0 shadow-sm">
+        <!-- Item 3: Quick & Easy -->
+        <div class="feature-item flex items-center gap-4 py-2 lg:px-6 lg:border-r lg:border-slate-200">
+          <!-- Yellow lightning icon -->
+          <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-[#F5B400] flex-shrink-0">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
             </svg>
@@ -355,10 +268,10 @@
           </div>
         </div>
 
-        <!-- FEATURE 4: Purple people/community icon | "Build Communities" | "Support local employment" -->
-        <div class="feature-card flex items-center gap-4 px-3 lg:px-6 py-2">
-          <!-- Purple People / Community Icon -->
-          <div class="feature-icon-wrapper bg-purple-100 text-purple-700 flex-shrink-0 shadow-sm">
+        <!-- Item 4: Build Communities -->
+        <div class="feature-item flex items-center gap-4 py-2 lg:px-6">
+          <!-- Purple people icon -->
+          <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 flex-shrink-0">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
@@ -373,679 +286,15 @@
     </div>
   </section>
 
-  <!-- ================================================== -->
-  <!-- QUICK SEARCH & MATCH BAR WIDGET                    -->
-  <!-- ================================================== -->
-  <section class="relative -mt-4 mb-16 z-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-2xl shadow-xl shadow-navy/10 border border-slate-200/80 p-4 sm:p-6">
-        
-        <!-- Toggle: Looking for Work vs Looking to Hire -->
-        <div class="flex items-center justify-between flex-wrap gap-3 pb-4 mb-4 border-b border-slate-100">
-          <div class="flex items-center gap-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Search Mode:</span>
-            <label class="inline-flex items-center gap-2 cursor-pointer text-sm font-semibold text-slate-700">
-              <input type="radio" name="search-type" value="jobs" checked class="text-[#08A84F] focus:ring-[#08A84F]">
-              <span>Find Nearby Jobs</span>
-            </label>
-            <label class="inline-flex items-center gap-2 cursor-pointer text-sm font-semibold text-slate-700">
-              <input type="radio" name="search-type" value="workers" class="text-[#08A84F] focus:ring-[#08A84F]">
-              <span>Hire Local Workers</span>
-            </label>
-          </div>
-          <div class="text-xs text-slate-400 flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-[#08A84F]" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-            Auto-detecting your ward / locality
-          </div>
-        </div>
-
-        <form id="quick-search-form" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-          <!-- Skill / Trade Selector -->
-          <div class="sm:col-span-5">
-            <label class="block text-xs font-semibold text-slate-500 mb-1">Select Skill / Trade</label>
-            <div class="relative">
-              <select id="quick-skill-select" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
-                <option value="">All Trades &amp; Skills</option>
-                <option value="Mason / Rajmistri">Construction / Mason (Rajmistri)</option>
-                <option value="Plumber">Plumber (Nal Saaz)</option>
-                <option value="Electrician">Electrician (Bijli Mistri)</option>
-                <option value="Painter">House Painter (Rangwala)</option>
-                <option value="Carpenter">Carpenter (Badhai)</option>
-                <option value="Gardener">Gardener (Mali)</option>
-                <option value="Mechanic">Mechanic / Repairer</option>
-                <option value="Cook / Kitchen">Cook / Catering Helper</option>
-                <option value="General Laborer">General Daily Wage Laborer (Beldar / Mazdoor)</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Location / Pincode -->
-          <div class="sm:col-span-4">
-            <label class="block text-xs font-semibold text-slate-500 mb-1">Location or Ward</label>
-            <div class="relative">
-              <input type="text" id="quick-location-input" placeholder="e.g. Sector 18, Ward 4, Andheri, Indiranagar" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
-            </div>
-          </div>
-
-          <!-- Search Action Button -->
-          <div class="sm:col-span-3 sm:mt-5">
-            <button type="submit" class="w-full bg-[#062B63] hover:bg-[#041B3E] text-white font-bold py-3 px-5 rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-md">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-              <span>Instant Search</span>
-            </button>
-          </div>
-        </form>
-
-        <!-- Popular Category Quick Tags -->
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 flex-wrap text-xs">
-          <span class="font-semibold text-slate-400">Trending Today:</span>
-          <a href="jobs.html?skill=Mason" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-[#08A84F] text-slate-600 rounded-md font-medium transition">Mason (₹800/d)</a>
-          <a href="jobs.html?skill=Electrician" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-[#08A84F] text-slate-600 rounded-md font-medium transition">Electrician (₹750/d)</a>
-          <a href="jobs.html?skill=Plumber" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-[#08A84F] text-slate-600 rounded-md font-medium transition">Plumber (₹700/d)</a>
-          <a href="jobs.html?skill=Painter" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-[#08A84F] text-slate-600 rounded-md font-medium transition">Painter (₹750/d)</a>
-          <a href="jobs.html?skill=Gardener" class="px-2.5 py-1 bg-slate-100 hover:bg-emerald-50 hover:text-[#08A84F] text-slate-600 rounded-md font-medium transition">Gardener (₹600/d)</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- POPULAR SKILL CATEGORIES & FAIR DAILY WAGES         -->
-  <!-- ================================================== -->
-  <section class="py-14 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
-        <div>
-          <span class="text-xs font-bold text-[#08A84F] uppercase tracking-wider">Skill Directory</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#062B63] mt-1">Popular Trades &amp; Standard Daily Wages</h2>
-          <p class="text-sm text-slate-500 mt-2 max-w-xl">Transparent, fair wage benchmarks based on local government norms and real market rates. No hidden commissions.</p>
-        </div>
-        <div class="mt-4 md:mt-0">
-          <a href="workers.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-[#062B63] hover:text-[#08A84F] transition">
-            <span>Browse all 28+ Trades</span>
-            <span>&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Trade Cards Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        
-        <!-- Mason -->
-        <a href="workers.html?skill=Mason" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">🧱</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">Mason / Mistri</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹750 - ₹950/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">180+ Available</span>
-        </a>
-
-        <!-- Electrician -->
-        <a href="workers.html?skill=Electrician" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">⚡</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">Electrician</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹700 - ₹900/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">140+ Available</span>
-        </a>
-
-        <!-- Plumber -->
-        <a href="workers.html?skill=Plumber" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">🔧</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">Plumber</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹650 - ₹850/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">95+ Available</span>
-        </a>
-
-        <!-- Painter -->
-        <a href="workers.html?skill=Painter" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-rose-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">🎨</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">Painter</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹700 - ₹850/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">115+ Available</span>
-        </a>
-
-        <!-- Carpenter -->
-        <a href="workers.html?skill=Carpenter" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-orange-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">🪚</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">Carpenter</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹750 - ₹950/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">85+ Available</span>
-        </a>
-
-        <!-- Helper / General Labor -->
-        <a href="workers.html?skill=General" class="group p-4 rounded-2xl border border-slate-200/90 hover:border-[#08A84F] bg-white hover:shadow-lg transition-all text-center">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 group-hover:bg-[#08A84F] flex items-center justify-center transition-colors mb-3">
-            <span class="text-2xl group-hover:scale-110 transition-transform">💪</span>
-          </div>
-          <h3 class="font-bold text-slate-800 text-sm group-hover:text-[#08A84F] transition">General Labor</h3>
-          <p class="text-xs text-[#08A84F] font-bold mt-1">₹550 - ₹700/day</p>
-          <span class="text-[11px] text-slate-400 mt-1 block">320+ Available</span>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- HOW SKILLCONNECT WORKS (TWO-SIDED VALUE)           -->
-  <!-- ================================================== -->
-  <section class="py-16 bg-[#F7FAFC] border-y border-slate-200/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold text-[#08A84F] uppercase tracking-wider">Simple &amp; Fast Process</span>
-        <h2 class="text-3xl font-extrabold text-[#062B63] mt-1">How SkillConnect Works</h2>
-        <p class="text-sm sm:text-base text-slate-600 mt-2">Designed specifically for daily-wage workers and local employers with zero complicated steps or paperwork.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        
-        <!-- For Workers -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 relative">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#08A84F] text-xs font-bold uppercase mb-6">
-            For Daily-Wage Workers (Kaarigar)
-          </div>
-
-          <div class="space-y-6">
-            <!-- Step 1 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-navy text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                1
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Register with Phone &amp; Trade</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">No complicated resume. Simply enter your mobile number, your skill (mason, plumber, helper), and your area.</p>
-              </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-navy text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                2
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Receive Nearby Job Alerts</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">Get immediate SMS and WhatsApp alerts for daily shifts located within 3 to 10 kilometers of your home.</p>
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-[#08A84F] text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                3
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Work &amp; Get Paid Same Day</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">Direct daily wage paid in cash or UPI. 0% commission deducted from your hard-earned wages.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="signup.html?role=worker" class="text-sm font-bold text-[#08A84F] hover:text-[#068F42] flex items-center gap-1.5">
-              <span>Register as a Worker in 2 Minutes</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- For Employers / Contractors -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 relative">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-[#062B63] text-xs font-bold uppercase mb-6">
-            For Employers &amp; Contractors
-          </div>
-
-          <div class="space-y-6">
-            <!-- Step 1 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-[#08A84F] text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                1
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Post a Shift or Browse Workers</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">State how many workers you need, required trade, date, and offered daily rate (e.g., 3 Painters for 2 days).</p>
-              </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-[#08A84F] text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                2
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Connect with Verified Profiles</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">View Aadhaar-verified workers with past customer ratings, verified skills, and distance from your site.</p>
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-navy text-white font-bold flex items-center justify-center flex-shrink-0 text-base">
-                3
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800 text-base">Get Work Done Reliably</h4>
-                <p class="text-xs sm:text-sm text-slate-500 mt-1">Workers arrive on time. Rate the worker afterward to help build community trust.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="signup.html?role=employer" class="text-sm font-bold text-[#062B63] hover:text-navy-900 flex items-center gap-1.5">
-              <span>Hire Workers for Your Site</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- FEATURED LIVE JOBS (PREVIEW ON LANDING PAGE)       -->
-  <!-- ================================================== -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-10">
-        <div>
-          <span class="text-xs font-bold text-[#08A84F] uppercase tracking-wider">Live Openings</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#062B63] mt-1">Recent Daily Shifts in Your Vicinity</h2>
-          <p class="text-sm text-slate-500 mt-1">Direct from verified contractors and households.</p>
-        </div>
-        <div class="mt-4 sm:mt-0">
-          <a href="jobs.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold text-[#062B63] hover:border-[#062B63] transition">
-            <span>View All Jobs</span>
-            <span class="text-base">&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Job Card 1 -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between">
-          <div>
-            <div class="flex items-start justify-between gap-3 mb-3">
-              <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 font-bold text-xs">Masonry &bull; 4 Workers Needed</span>
-              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Active Today</span>
-            </div>
-            <h3 class="font-bold text-slate-800 text-base leading-snug hover:text-[#062B63]">Boundary Wall Construction &amp; Brickwork</h3>
-            <p class="text-xs text-slate-500 mt-1.5">Sharma &amp; Sons Builders &bull; Sector 62</p>
-            
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 2.4 km away</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 3 Days Shift</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">🍲 Lunch Provided</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <div>
-              <span class="text-xs text-slate-400 block">Daily Wage</span>
-              <span class="text-lg font-extrabold text-[#08A84F]">₹850 <span class="text-xs font-normal text-slate-500">/ day</span></span>
-            </div>
-            <button data-modal-target="apply-modal" data-job-title="Boundary Wall Construction (Mason)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
-              Apply Now
-            </button>
-          </div>
-        </div>
-
-        <!-- Job Card 2 -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between">
-          <div>
-            <div class="flex items-start justify-between gap-3 mb-3">
-              <span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 font-bold text-xs">Electrician &bull; 2 Workers Needed</span>
-              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Urgent</span>
-            </div>
-            <h3 class="font-bold text-slate-800 text-base leading-snug hover:text-[#062B63]">Apartment Rewiring &amp; MCB Box Installation</h3>
-            <p class="text-xs text-slate-500 mt-1.5">Apex Residency RWA &bull; Green Glen Layout</p>
-            
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 1.8 km away</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 1 Day (Full Shift)</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⚡ Immediate</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <div>
-              <span class="text-xs text-slate-400 block">Daily Wage</span>
-              <span class="text-lg font-extrabold text-[#08A84F]">₹900 <span class="text-xs font-normal text-slate-500">/ day</span></span>
-            </div>
-            <button data-modal-target="apply-modal" data-job-title="Apartment Rewiring (Electrician)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
-              Apply Now
-            </button>
-          </div>
-        </div>
-
-        <!-- Job Card 3 -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 p-5 hover:shadow-xl hover:border-slate-300 transition-all flex flex-col justify-between">
-          <div>
-            <div class="flex items-start justify-between gap-3 mb-3">
-              <span class="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 font-bold text-xs">Painting &bull; 3 Workers Needed</span>
-              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Starts Tomorrow</span>
-            </div>
-            <h3 class="font-bold text-slate-800 text-base leading-snug hover:text-[#062B63]">Interior Emulsion Painting for 3BHK Villa</h3>
-            <p class="text-xs text-slate-500 mt-1.5">Mr. K. Nair (Homeowner) &bull; Rainbow Drive</p>
-            
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">📍 3.1 km away</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">⏳ 4 Days Shift</span>
-              <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">💵 Cash on Spot</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <div>
-              <span class="text-xs text-slate-400 block">Daily Wage</span>
-              <span class="text-lg font-extrabold text-[#08A84F]">₹800 <span class="text-xs font-normal text-slate-500">/ day</span></span>
-            </div>
-            <button data-modal-target="apply-modal" data-job-title="Interior Painting (Painter)" class="px-4 py-2 bg-[#08A84F] hover:bg-[#068F42] text-white text-xs font-bold rounded-xl transition shadow-sm">
-              Apply Now
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- COMMUNITY IMPACT & STATS COUNTER                   -->
-  <!-- ================================================== -->
-  <section class="py-16 bg-[#062B63] text-white relative overflow-hidden">
-    <!-- Subtle circular accents -->
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-[#08A84F]/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold text-[#16B85A] uppercase tracking-wider">Measurable Social Impact</span>
-        <h2 class="text-3xl font-extrabold text-white mt-1">Transforming Daily-Wage Livelihoods</h2>
-        <p class="text-sm text-slate-300 mt-2">Connecting unorganized workers directly with local employment to eliminate middleman exploitation.</p>
-      </div>
-
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        
-        <!-- Stat 1 -->
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#16B85A] stat-number" data-target="48500" data-suffix="+">48,500+</p>
-          <p class="text-sm font-semibold text-white mt-2">Registered Daily Workers</p>
-          <p class="text-xs text-slate-400 mt-1">Across 18 cities &amp; 140 wards</p>
-        </div>
-
-        <!-- Stat 2 -->
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white stat-number" data-target="96200" data-suffix="+">96,200+</p>
-          <p class="text-sm font-semibold text-white mt-2">Shifts Completed</p>
-          <p class="text-xs text-slate-400 mt-1">98.2% on-time attendance</p>
-        </div>
-
-        <!-- Stat 3 -->
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5B400] stat-number" data-target="4" data-prefix="₹" data-suffix=".6 Cr">₹4.6 Cr</p>
-          <p class="text-sm font-semibold text-white mt-2">Wages Direct to Workers</p>
-          <p class="text-xs text-slate-400 mt-1">Zero cut taken from wages</p>
-        </div>
-
-        <!-- Stat 4 -->
-        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#16B85A] stat-number" data-target="100" data-suffix="%">100%</p>
-          <p class="text-sm font-semibold text-white mt-2">Verified Profiles</p>
-          <p class="text-xs text-slate-400 mt-1">Aadhaar &amp; Skill tested</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- REAL TESTIMONIALS (COMMUNITY VOICES)               -->
-  <!-- ================================================== -->
-  <section class="py-16 bg-[#F7FAFC]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold text-[#08A84F] uppercase tracking-wider">Community Voices</span>
-        <h2 class="text-3xl font-extrabold text-[#062B63] mt-1">Trusted by Workers and Contractors Alike</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Testimonial 1 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 mb-3">
-              ★★★★★
-            </div>
-            <p class="text-sm text-slate-600 italic leading-relaxed">
-              &ldquo;Earlier I had to stand at the labour chowk from 6 AM in the cold with no guarantee of work. With SkillConnect, I receive job alerts on my mobile 2 days in advance. My monthly income increased by ₹6,000.&rdquo;
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 text-[#08A84F] font-bold flex items-center justify-center">
-              RK
-            </div>
-            <div>
-              <p class="text-sm font-bold text-slate-800">Raju Kumar</p>
-              <p class="text-xs text-slate-500">Skilled Mason &bull; 8 Yrs Exp &bull; Bangalore</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 mb-3">
-              ★★★★★
-            </div>
-            <p class="text-sm text-slate-600 italic leading-relaxed">
-              &ldquo;As a building contractor, getting reliable plumbers and painters during peak construction was always stressful. SkillConnect lets me hire verified local workers in 15 minutes. Payment is transparent.&rdquo;
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue-100 text-[#062B63] font-bold flex items-center justify-center">
-              VS
-            </div>
-            <div>
-              <p class="text-sm font-bold text-slate-800">Vikram Singh</p>
-              <p class="text-xs text-slate-500">Civil Contractor &bull; Sector 43</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 mb-3">
-              ★★★★★
-            </div>
-            <p class="text-sm text-slate-600 italic leading-relaxed">
-              &ldquo;Being a woman gardener and plant nursery specialist, finding dignified local household jobs was tough. Now homeowners book me directly for garden maintenance. Safe, verified, and reliable.&rdquo;
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-700 font-bold flex items-center justify-center">
-              SD
-            </div>
-            <div>
-              <p class="text-sm font-bold text-slate-800">Sunita Devi</p>
-              <p class="text-xs text-slate-500">Landscape Gardener &bull; 4.9 Rating</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- CALL TO ACTION BANNER                              -->
-  <!-- ================================================== -->
-  <section class="py-14 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-r from-[#062B63] via-[#08367A] to-[#0A459A] rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="max-w-2xl">
-          <span class="text-xs font-bold text-[#16B85A] uppercase tracking-wider">Start Today</span>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-1 leading-tight">
-            Ready to Find Work or Hire Skilled Local Workers?
-          </h2>
-          <p class="text-slate-300 text-sm sm:text-base mt-3">
-            Join thousands of daily-wage workers, contractors, and local homeowners building stronger communities together.
-          </p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0 w-full sm:w-auto">
-          <a href="signup.html?role=worker" class="btn-cta-green text-center px-7 py-3.5 text-sm font-bold shadow-lg">
-            Register as Worker
-          </a>
-          <a href="signup.html?role=employer" class="px-7 py-3.5 text-sm font-bold rounded-full bg-white text-[#062B63] hover:bg-slate-100 transition text-center shadow-lg">
-            Register as Employer
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================== -->
-  <!-- FOOTER                                             -->
-  <!-- ================================================== -->
-  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
-        
-        <!-- Brand Info -->
-        <div class="lg:col-span-2">
-          <a href="index.html" class="flex items-center gap-2.5 mb-4">
-            <div class="w-9 h-9 rounded-lg bg-[#08A84F] flex items-center justify-center text-white font-bold">
-              SC
-            </div>
-            <span class="text-xl font-extrabold text-white tracking-tight">
-              Skill<span class="text-[#08A84F]">Connect</span>
-            </span>
-          </a>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm mb-4">
-            Local Job &amp; Skill Matching Portal for Daily-Wage Workers. Connecting unskilled and semi-skilled workers directly with verified employers nearby.
-          </p>
-          <p class="text-xs text-slate-500 font-medium">
-            Project Initiative &bull; Local Work &bull; Local People &bull; Stronger Communities
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Quick Navigation</h4>
-          <ul class="space-y-2.5 text-xs text-slate-400">
-            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-            <li><a href="jobs.html" class="hover:text-white transition">Find Jobs</a></li>
-            <li><a href="workers.html" class="hover:text-white transition">Find Workers</a></li>
-            <li><a href="about.html" class="hover:text-white transition">About Project</a></li>
-          </ul>
-        </div>
-
-        <!-- Popular Trades -->
-        <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Worker Categories</h4>
-          <ul class="space-y-2.5 text-xs text-slate-400">
-            <li><a href="workers.html?skill=Mason" class="hover:text-white transition">Masons &amp; Bricklayers</a></li>
-            <li><a href="workers.html?skill=Electrician" class="hover:text-white transition">Electricians &amp; Wiremen</a></li>
-            <li><a href="workers.html?skill=Plumber" class="hover:text-white transition">Plumbers &amp; Pipefitters</a></li>
-            <li><a href="workers.html?skill=Painter" class="hover:text-white transition">House Painters</a></li>
-            <li><a href="workers.html?skill=Carpenter" class="hover:text-white transition">Carpenters</a></li>
-          </ul>
-        </div>
-
-        <!-- Worker Helpline -->
-        <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Worker Helpline</h4>
-          <p class="text-xs text-slate-400 mb-2">Toll-free daily helpline for workers:</p>
-          <p class="text-base font-extrabold text-[#16B85A] mb-3">1800-SKILL-CONNECT</p>
-          <p class="text-xs text-slate-500">Available in Hindi, English, Tamil, Telugu, and Kannada.</p>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>&copy; 2026 SkillConnect. All rights reserved. Designed for Daily-Wage Worker Upliftment.</p>
-        <div class="flex items-center gap-6">
-          <a href="about.html" class="hover:text-slate-300 transition">Privacy Policy</a>
-          <a href="about.html" class="hover:text-slate-300 transition">Terms of Service</a>
-          <a href="about.html" class="hover:text-slate-300 transition">College Project Eval Info</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================================================== -->
-  <!-- MODAL: QUICK JOB APPLY                             -->
-  <!-- ================================================== -->
-  <div id="apply-modal" class="modal-overlay fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative animate-fade-in-up">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-        <div>
-          <h3 class="font-bold text-slate-800 text-lg">Apply for Shift</h3>
-          <p id="modal-job-title" class="text-xs font-semibold text-[#08A84F]">Selected Job</p>
-        </div>
-        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <form id="job-apply-form" class="mt-4 space-y-4" onsubmit="event.preventDefault(); window.showToast('Application submitted! Contractor will call you via SMS.'); document.getElementById('apply-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden');">
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Your Full Name</label>
-          <input type="text" required placeholder="e.g. Ramesh Kumar" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Mobile Number (for SMS &amp; Call)</label>
-          <div class="flex">
-            <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-slate-200 bg-slate-100 text-slate-600 text-xs font-bold">+91</span>
-            <input type="tel" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full bg-slate-50 border border-slate-200 rounded-r-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Years of Experience in this Trade</label>
-          <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#08A84F]">
-            <option>1 - 2 Years</option>
-            <option selected>3 - 5 Years</option>
-            <option>5+ Years (Master / Mistri)</option>
-          </select>
-        </div>
-        <div class="pt-2">
-          <button type="submit" class="w-full py-3 bg-[#08A84F] hover:bg-[#068F42] text-white font-bold text-sm rounded-xl transition shadow-md">
-            Confirm &amp; Send Application
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
 </body>
 </html>
